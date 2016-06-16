@@ -25,4 +25,4 @@ rebuild:
 	make build
 
 clean:
-	docker rmi -f $(docker images | grep "<none>" | awk "{print $3}")
+	docker rmi $(docker images -q -f "dangling=true")

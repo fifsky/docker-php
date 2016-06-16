@@ -23,6 +23,8 @@ services:
       - "9000:9000"
     links:
       - "redis"
+      - "ssdb"
+      - "gearmand"
     volumes:
       - ~/wwwroot:/data
 
@@ -42,3 +44,19 @@ services:
     volumes:
       - ~/wwwroot:/data
       - ./supervisor/conf/supervisor.d:/etc/supervisor
+
+  ssdb:
+    build: ./ssdb
+    image: verystar/ssdb:last
+    container_name: verystar_ssdb
+    restart: always
+    ports:
+      - "8888:8888"
+    volumes:
+      - ~/wwwroot/data/ssdb:/var/lib/ssdb
+
+  gearmand:
+    build: ./gearmand
+    image: verystar/gearmand:last
+    container_name: verystar_gearmand
+    restart: always
