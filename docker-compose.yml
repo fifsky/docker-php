@@ -60,3 +60,5 @@ services:
     image: verystar/gearmand:last
     container_name: verystar_gearmand
     restart: always
+    ports:
+      - "4370:4370"
