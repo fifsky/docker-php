@@ -5,8 +5,8 @@ nginx:
   links:
     - "php"
   volumes:
-    - ~/wwwroot:/data/www
-    - conf/vhost.d:/etc/nginx/conf.d/
+    - ~/wwwroot:/data
+    - ./nginx/conf/conf.d:/etc/nginx/conf.d
 
 php:
   build: ./php
@@ -15,7 +15,9 @@ php:
   links:
     - "redis"
   volumes:
-    - ~/wwwroot:/data/www
+    - ~/wwwroot:/data
+    - ./php/conf/php.ini:/usr/local/etc/php/php.ini
+    - ./php/conf/php-fpm.conf:/usr/local/etc/php-fpm.conf
 
 redis:
   build: ./redis

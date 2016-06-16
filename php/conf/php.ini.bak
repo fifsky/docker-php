@@ -1823,7 +1823,7 @@ mssql.secure_connection = Off
 ; http://php.net/exif.decode-jis-intel
 ;exif.decode_jis_intel    = JIS
 
-[Tidy]
+;[Tidy]
 ; The path to a default tidy configuration file to use when using tidy
 ; http://php.net/tidy.default-config
 ;tidy.default_config = /usr/local/lib/php/default.tcfg
@@ -1832,7 +1832,7 @@ mssql.secure_connection = Off
 ; WARNING: Do not use this option if you are generating non-html content
 ; such as dynamic images
 ; http://php.net/tidy.clean-output
-tidy.clean_output = Off
+;tidy.clean_output = Off
 
 [soap]
 ; Enables or disables WSDL caching feature.
@@ -1873,22 +1873,22 @@ ldap.max_links = -1
 [dba]
 ;dba.default_handler=
 
-[opcache]
+;[opcache]
 ; Determines if Zend OPCache is enabled
-opcache.enable=0
+;opcache.enable=0
 
 ; Determines if Zend OPCache is enabled for the CLI version of PHP
-opcache.enable_cli=0
+;opcache.enable_cli=0
 
 ; The OPcache shared memory storage size.
-opcache.memory_consumption=128
+;opcache.memory_consumption=128
 
 ; The amount of memory for interned strings in Mbytes.
-opcache.interned_strings_buffer=8
+;opcache.interned_strings_buffer=8
 
 ; The maximum number of keys (scripts) in the OPcache hash table.
 ; Only numbers between 200 and 100000 are allowed.
-opcache.max_accelerated_files=4000
+;opcache.max_accelerated_files=4000
 
 ; The maximum percentage of "wasted" memory until a restart is scheduled.
 ;opcache.max_wasted_percentage=5
@@ -1901,27 +1901,27 @@ opcache.max_accelerated_files=4000
 
 ; When disabled, you must reset the OPcache manually or restart the
 ; webserver for changes to the filesystem to take effect.
-opcache.validate_timestamps=1
+;opcache.validate_timestamps=1
 
 ; How often (in seconds) to check file timestamps for changes to the shared
 ; memory storage allocation. ("1" means validate once per second, but only
 ; once per request. "0" means always validate)
-opcache.revalidate_freq=60
+;opcache.revalidate_freq=60
 
 ; Enables or disables file search in include_path optimization
 ;opcache.revalidate_path=0
 
 ; If disabled, all PHPDoc comments are dropped from the code to reduce the
 ; size of the optimized code.
-opcache.save_comments=0
+;opcache.save_comments=0
 
 ; If disabled, PHPDoc comments are not loaded from SHM, so "Doc Comments"
 ; may be always stored (save_comments=1), but not loaded by applications
 ; that don't need them anyway.
-opcache.load_comments=0
+;opcache.load_comments=0
 
 ; If enabled, a fast shutdown sequence is used for the accelerated code
-opcache.fast_shutdown=1
+;opcache.fast_shutdown=1
 
 ; Allow file existence override (file_exists, etc.) performance feature.
 ;opcache.enable_file_override=0
@@ -2009,22 +2009,22 @@ opcache.fast_shutdown=1
 ;zend_loader.obfuscation_level_support=3
 ;zend_loader.license_path=
 
-[xdebug]
-zend_extension=xdebug.so
-xdebug.remote_enable =1
-xdebug.remote_autostart = 0
-xdebug.remote_connect_back = 1
-xdebug.remote_handler = "dbgp"
-xdebug.remote_host = "192.168.1.145"
-xdebug.remote_mode = "req"
-xdebug.remote_port = 9000
-xdebug.auto_trace = 0
-xdebug.trace_enable_trigger=1
-xdebug.collect_paramrs = 1
-xdebug.collect_return = 1
-xdebug.trace_output_dir = "/data/www/xdebug/trace/"
-xdebug.profiler_enable = 0
-xdebug.profiler_enable_trigger = 1
-xdebug.profiler_output_name = cachegrind.out.%R.%p
-xdebug.profiler_output_dir = "/data/www/xdebug/profiler/"
-xdebug.idekey = "phpstorm"
+;[xdebug]
+;zend_extension=xdebug.so
+;xdebug.remote_enable =1
+;xdebug.remote_autostart = 0
+;xdebug.remote_connect_back = 1
+;xdebug.remote_handler = "dbgp"
+;xdebug.remote_host = "192.168.1.145"
+;xdebug.remote_mode = "req"
+;xdebug.remote_port = 9000
+;xdebug.auto_trace = 0
+;xdebug.trace_enable_trigger=1
+;xdebug.collect_paramrs = 1
+;xdebug.collect_return = 1
+;xdebug.trace_output_dir = "/data/www/xdebug/trace/"
+;xdebug.profiler_enable = 0
+;xdebug.profiler_enable_trigger = 1
+;xdebug.profiler_output_name = cachegrind.out.%R.%p
+;xdebug.profiler_output_dir = "/data/www/xdebug/profiler/"
+;xdebug.idekey = "phpstorm"
