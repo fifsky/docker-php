@@ -1,0 +1,23 @@
+nginx:
+  build: ./nginx
+  ports:
+    - "80:80"
+  links:
+    - "php"
+  volumes:
+    - ~/wwwroot:/data/www
+    - conf/vhost.d:/etc/nginx/conf.d/
+
+php:
+  build: ./php
+  ports:
+    - "9000:9000"
+  links:
+    - "redis"
+  volumes:
+    - ~/wwwroot:/data/www
+
+redis:
+  build: ./redis
+  ports:
+    - "6379:6379"
