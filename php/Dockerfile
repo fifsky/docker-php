@@ -27,8 +27,8 @@ RUN pecl install memcached \
     && pecl install xdebug
 
 #添加配置文件
-#ADD ./conf/php.ini /usr/local/etc/php/php.ini
-#ADD ./conf/php-fpm.conf /usr/local/etc/php-fpm.conf
+ADD ./conf/php.ini /usr/local/etc/php/php.ini
+ADD ./conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 #创建目录
 RUN mkdir -p /data/www && mkdir -p /data/log/php && chown -R www-data:www-data /data/log/php

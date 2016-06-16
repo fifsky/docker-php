@@ -1,28 +1,44 @@
-nginx:
-  build: ./nginx
-  container_name: verystar_nginx
-  ports:
-    - "80:80"
-  links:
-    - "php"
-  volumes:
-    - ~/wwwroot:/data
-    - ./nginx/conf/conf.d:/etc/nginx/conf.d
+version: '2'
 
-php:
-  build: ./php
-  container_name: verystar_php
-  ports:
-    - "9000:9000"
-  links:
-    - "redis"
-  volumes:
-    - ~/wwwroot:/data
-    - ./php/conf/php.ini:/usr/local/etc/php/php.ini
-    - ./php/conf/php-fpm.conf:/usr/local/etc/php-fpm.conf
+services:
+  nginx:
+    build: ./nginx
+    image: verystar/nginx:1.9
+    container_name: verystar_nginx
+    restart: always
+    ports:
+      - "80:80"
+    links:
+      - "php"
+    volumes:
+      - ~/wwwroot:/data
+      - ./nginx/conf/vhost.d:/etc/nginx/conf.d
 
-redis:
-  build: ./redis
-  container_name: verystar_redis
-  ports:
-    - "6379:6379"
+  php:
+    build: ./php
+    image: verystar/php:5.6.22
+    container_name: verystar_php
+    restart: always
+    ports:
+      - "9000:9000"
+    links:
+      - "redis"
+    volumes:
+      - ~/wwwroot:/data
+
+  redis:
+    build: ./redis
+    image: verystar/redis:3.2
+    container_name: verystar_redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  supervisor:
+    build: ./supervisor
+    image: verystar/supervisor:last
+    container_name: verystar_supervisor
+    restart: always
+    volumes:
+      - ~/wwwroot:/data
+      - ./supervisor/conf/supervisor.d:/etc/supervisor
