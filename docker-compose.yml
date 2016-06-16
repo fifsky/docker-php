@@ -1,5 +1,6 @@
 nginx:
   build: ./nginx
+  container_name: verystar_nginx
   ports:
     - "80:80"
   links:
@@ -10,6 +11,7 @@ nginx:
 
 php:
   build: ./php
+  container_name: verystar_php
   ports:
     - "9000:9000"
   links:
@@ -21,5 +23,6 @@ php:
 
 redis:
   build: ./redis
+  container_name: verystar_redis
   ports:
     - "6379:6379"
