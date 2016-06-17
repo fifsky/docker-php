@@ -1,6 +1,8 @@
 init:
 	echo >> '116.228.41.178 git.verystar.cn' /etc/hosts
-	apt install git default-jdk
+	apt install git default-jdk php
+	apt install php-xml php-curl php-zip
+	pecl install redis
 	mkdir -p ~/wwwroot/log/nginx
 	mkdir -p ~/wwwroot/log/php
 	mkdir -p ~/wwwroot/log/supervisor
