@@ -7,6 +7,7 @@ init:
 	mkdir -p ~/wwwroot/log/php
 	mkdir -p ~/wwwroot/log/supervisor
 	mkdir -p ~/wwwroot/data/ssdb
+	chown $(whoami):$(whoami) -R ~/wwwroot
 	wget https://getcomposer.org/composer.phar -O /usr/local/bin/composer
 	chmod +x /usr/local/bin/composer
 	composer config -g repo.packagist composer https://packagist.phpcomposer.com
