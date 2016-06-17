@@ -1,4 +1,5 @@
 init:
+	echo >> '116.228.41.178 git.verystar.cn' /etc/hosts
 	apt install git default-jdk
 	mkdir -p ~/wwwroot/log/nginx
 	mkdir -p ~/wwwroot/log/php
