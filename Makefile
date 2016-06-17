@@ -36,7 +36,7 @@ rebuild:
 	make build
 
 clean:
-	docker rmi $(docker images -q -f "dangling=true")
+	docker rmi $(sudo docker images -q -f "dangling=true")
 
 bash:
 	docker exec -it ${m} /bin/bash
