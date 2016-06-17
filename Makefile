@@ -26,3 +26,6 @@ rebuild:
 
 clean:
 	docker rmi $(docker images -q -f "dangling=true")
+
+bash:
+	docker exec -it ${m} /bin/bash
