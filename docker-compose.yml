@@ -42,6 +42,8 @@ services:
     image: verystar/supervisor:last
     container_name: verystar_supervisor
     restart: always
+    links:
+      - "php"
     volumes:
       - ~/wwwroot:/data
       - ./supervisor/conf/supervisor.d:/etc/supervisor
