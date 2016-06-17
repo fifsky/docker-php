@@ -11,6 +11,7 @@ init:
 	wget https://getcomposer.org/composer.phar -O /usr/local/bin/composer
 	chmod +x /usr/local/bin/composer
 	composer config -g repo.packagist composer https://packagist.phpcomposer.com
+	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 up:
 	docker-compose up -d
