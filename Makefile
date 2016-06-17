@@ -1,6 +1,12 @@
 dl:
 	wget https://getcomposer.org/composer.phar -O php/composer.phar
 
+init:
+	mkdir -p ~/wwwroot/log/nginx
+	mkdir -p ~/wwwroot/log/php
+	mkdir -p ~/wwwroot/log/supervisor
+	mkdir -p ~/wwwroot/data/ssdb
+
 up:
 	docker-compose up -d
 

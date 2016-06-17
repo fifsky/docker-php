@@ -1,5 +1,22 @@
 # Docker 开发环境
 
+首先在根目录执行下面的命令在家目录生成环境所需要的一些目录用于存放日志和数据
+
+```
+make init
+```
+
+然后执行编译
+```
+docker-compose build
+```
+
+执行
+
+```
+docker-compose run -d
+```
+
 只需修改docker-compose.yml要将你的WEB根目录映射到/data即可
 
 `!重要` 如果对Dockerfile文件进行修改，需要重新编译docker镜像，如果对docker-compose.yml文件进行修改，需要删除docker容器，重新创建
