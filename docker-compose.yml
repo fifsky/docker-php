@@ -25,6 +25,7 @@ services:
       - "redis"
       - "ssdb"
       - "gearmand"
+      #- "mysql"
     volumes:
       - ~/wwwroot:/data
 
@@ -62,3 +63,15 @@ services:
     restart: always
     ports:
       - "4370:4370"
+
+#  mysql:
+#    build: ./mysql
+#    image: mysql:5.7
+#    container_name: verystar_mysql
+#    restart: always
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=123456
+#    ports:
+#      - "4370:4370"
+#    volumes:
+#      - ~/wwwroot/data/mysql:/var/lib/mysql
