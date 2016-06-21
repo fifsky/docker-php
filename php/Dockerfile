@@ -57,6 +57,7 @@ RUN curl -fsSL 'https://github.com/Qihoo360/phptrace/archive/v0.3.0.tar.gz' -o /
         cd /usr/local/phptrace/cmdtool \
         && make \
         && ln -s /usr/local/phptrace/cmdtool/phptrace /usr/bin/phptrace \
+        && ln -s /usr/local/phptrace/cmdtool/trace-php /usr/bin/trace-php \
     )
 
 #添加配置文件
@@ -64,7 +65,7 @@ ADD ./conf/php.ini /usr/local/etc/php/php.ini
 ADD ./conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 #创建目录
-RUN mkdir -p /data/www && mkdir -p /data/log/php && chown -R www-data:www-data /data/log/php
+RUN mkdir -p /data && chown -R www-data:www-data /data
 
 RUN usermod -u 1000 www-data
 

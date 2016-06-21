@@ -11,8 +11,9 @@ services:
     links:
       - "php"
     volumes:
-      - ~/wwwroot:/data
       - ./nginx/conf/vhost.d:/etc/nginx/conf.d
+    volumes_from:
+      - php
 
   php:
     build: ./php
@@ -27,7 +28,15 @@ services:
       - "gearmand"
       #- "mysql"
     volumes:
+      - ./timezone:/etc/timezone
+      - ./Shanghai:/etc/localtime
       - ~/wwwroot:/data
+    #添加HOST
+    #extra_hosts:
+    #  - "db.test.cn:192.168.1.249"
+    #添加额外的host绑定指向到nginx容器的IP
+    #external_links:
+    #  - "nginx:api.test.cn"
 
   redis:
     build: ./redis
@@ -36,6 +45,9 @@ services:
     restart: always
     ports:
       - "6379:6379"
+    volumes:
+      - ./timezone:/etc/timezone
+      - ./Shanghai:/etc/localtime
 
   supervisor:
     build: ./supervisor
@@ -43,10 +55,15 @@ services:
     container_name: verystar_supervisor
     restart: always
     links:
+      - "gearmand"
+      - "redis"
+      - "ssdb"
+    depends_on:
       - "php"
     volumes:
-      - ~/wwwroot:/data
       - ./supervisor/conf/supervisor.d:/etc/supervisor
+    volumes_from:
+      - php
 
   ssdb:
     build: ./ssdb
@@ -56,6 +73,8 @@ services:
     ports:
       - "8888:8888"
     volumes:
+      - ./timezone:/etc/timezone
+      - ./Shanghai:/etc/localtime
       - ~/wwwroot/data/ssdb:/var/lib/ssdb
 
   gearmand:
@@ -64,7 +83,10 @@ services:
     container_name: verystar_gearmand
     restart: always
     ports:
-      - "4370:4370"
+      - "4730:4730"
+    volumes:
+      - ./timezone:/etc/timezone
+      - ./Shanghai:/etc/localtime
 
 #  mysql:
 #    build: ./mysql
@@ -77,3 +99,4 @@ services:
 #      - "4370:4370"
 #    volumes:
 #      - ~/wwwroot/data/mysql:/var/lib/mysql
+#      - ./timezone:/etc/localtime
