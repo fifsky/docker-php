@@ -1,5 +1,5 @@
 FROM mysql:5.7
-MAINTAINER caixudong "caixudong@verystar.cn"
+MAINTAINER caixudong "fifsky@gmail.com"
 
 RUN usermod -u 1000 mysql && chown mysql.mysql /var/run/mysqld/
 

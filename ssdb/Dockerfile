@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER caixudong "caixudong@verystar.cn"
+MAINTAINER caixudong "fifsky@gmail.com"
 
 # Install source
 ADD ./conf/sources.list /etc/apt/sources.list

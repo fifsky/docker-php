@@ -1,5 +1,5 @@
 FROM verystar/php:5.6.22
-MAINTAINER caixudong "caixudong@verystar.cn"
+MAINTAINER caixudong "fifsky@gmail.com"
 
 RUN apt-get update && apt-get install libmosquitto-dev supervisor -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/*

@@ -1,4 +1,4 @@
 FROM redis:3.2
-MAINTAINER caixudong "caixudong@verystar.cn"
+MAINTAINER caixudong "fifsky@gmail.com"
 
 CMD [ "redis-server" ]

@@ -1,5 +1,5 @@
 FROM nginx:1.9
-MAINTAINER caixudong "caixudong@verystar.cn"
+MAINTAINER caixudong "fifsky@gmail.com"
 
 #添加本地文件到docker
 ADD ./conf/nginx.conf /etc/nginx/nginx.conf

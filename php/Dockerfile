@@ -1,5 +1,5 @@
 FROM php:5.6.22-fpm
-MAINTAINER caixudong "caixudong@verystar.cn"
+MAINTAINER caixudong "fifsky@gmail.com"
 
 # Install env
 ADD ./conf/sources.list /etc/apt/sources.list
