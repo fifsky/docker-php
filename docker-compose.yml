@@ -77,26 +77,15 @@ services:
       - ./Shanghai:/etc/localtime
       - ~/wwwroot/data/ssdb:/var/lib/ssdb
 
-  gearmand:
-    build: ./gearmand
-    image: verystar/gearmand:last
-    container_name: verystar_gearmand
+  mysql:
+    build: ./mysql
+    image: mysql:5.7
+    container_name: verystar_mysql
     restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
     ports:
-      - "4730:4730"
+      - "4370:4370"
     volumes:
-      - ./timezone:/etc/timezone
-      - ./Shanghai:/etc/localtime
-
-#  mysql:
-#    build: ./mysql
-#    image: mysql:5.7
-#    container_name: verystar_mysql
-#    restart: always
-#    environment:
-#      - MYSQL_ROOT_PASSWORD=123456
-#    ports:
-#      - "4370:4370"
-#    volumes:
-#      - ~/wwwroot/data/mysql:/var/lib/mysql
-#      - ./timezone:/etc/localtime
+      - ~/wwwroot/data/mysql:/var/lib/mysql
+      - ./timezone:/etc/localtime
