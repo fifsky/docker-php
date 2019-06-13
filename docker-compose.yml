@@ -3,8 +3,8 @@ version: '2'
 services:
   nginx:
     build: ./nginx
-    image: verystar/nginx:1.9
-    container_name: verystar_nginx
+    image: fifsky/nginx:1.9
+    container_name: nginx
     restart: always
     ports:
       - "80:80"
@@ -17,8 +17,8 @@ services:
 
   php:
     build: ./php
-    image: verystar/php:5.6.22
-    container_name: verystar_php
+    image: fifsky/php:5.6.22
+    container_name: php
     restart: always
     ports:
       - "9000:9000"
@@ -40,8 +40,8 @@ services:
 
   redis:
     build: ./redis
-    image: verystar/redis:3.2
-    container_name: verystar_redis
+    image: fifsky/redis:3.2
+    container_name: redis
     restart: always
     ports:
       - "6379:6379"
@@ -51,8 +51,8 @@ services:
 
   supervisor:
     build: ./supervisor
-    image: verystar/supervisor:last
-    container_name: verystar_supervisor
+    image: fifsky/supervisor:last
+    container_name: supervisor
     restart: always
     links:
       - "gearmand"
@@ -67,8 +67,8 @@ services:
 
   ssdb:
     build: ./ssdb
-    image: verystar/ssdb:last
-    container_name: verystar_ssdb
+    image: fifsky/ssdb:last
+    container_name: ssdb
     restart: always
     ports:
       - "8888:8888"
@@ -80,7 +80,7 @@ services:
   mysql:
     build: ./mysql
     image: mysql:5.7
-    container_name: verystar_mysql
+    container_name: mysql
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=123456

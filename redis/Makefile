@@ -1,4 +1,4 @@
-NAMESPACE=verystar
+NAMESPACE=fifsky
 APP=redis
 TAG=3.2
 

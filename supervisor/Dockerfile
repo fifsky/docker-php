@@ -1,4 +1,4 @@
-FROM verystar/php:5.6.22
+FROM fifsky/php:5.6.22
 MAINTAINER caixudong "fifsky@gmail.com"
 
 RUN apt-get update && apt-get install libmosquitto-dev supervisor -y \

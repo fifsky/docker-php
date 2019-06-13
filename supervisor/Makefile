@@ -1,4 +1,4 @@
-NAMESPACE=verystar
+NAMESPACE=fifsky
 APP=supervisor
 TAG=2.7
 

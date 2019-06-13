@@ -1,4 +1,4 @@
-NAMESPACE=verystar
+NAMESPACE=fifsky
 APP=php
 TAG=5.6.22
 

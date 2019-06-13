@@ -48,7 +48,7 @@ docker-compose run -d
 ## 重启某个docker
 
 ```
-docker restart verystar_php
+docker restart php
 ```
 
 > 同理停止和启动分别是`start` `stop`

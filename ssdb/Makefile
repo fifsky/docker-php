@@ -1,4 +1,4 @@
-NAMESPACE=verystar
+NAMESPACE=fifsky
 APP=ssdb
 TAG=1.9.0
 

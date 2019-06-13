@@ -1,4 +1,4 @@
-NAMESPACE=verystar
+NAMESPACE=fifsky
 APP=nginx
 TAG=1.9
 
